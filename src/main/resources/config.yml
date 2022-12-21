@@ -1,0 +1,66 @@
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+#                                                   💻Build Mode Config💻
+#                                                   🔥Coded By Mike3132🔥
+#                                                   💻Build Mode Config💻
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+
+Version: 'Version 1.0'
+ConfigVersion: '1.0'
+##### WARNING: DO NOT CHANGE ANYTHING ABOVE THIS LINE IT WILL BREAK THE PLUGIN!#####
+
+#✍✍✍✍✍Permissions✍✍✍✍✍
+#BuildMode.Jr > Access to the Sr build mode
+#BuildMode.Sr > Access to the Sr Build mode
+#BuildMode.Admin > Access to the admin commands
+
+Build-Mode-Jr-Enabled-Commands:
+  - 'lp user %player_name% parent add BuildTeamJr server=survival'
+Build-Mode-Jr-Disabled-Commands:
+  - 'lp user %player_name% parent remove BuildTeamJr server=survival'
+Build-Mode-Sr-Enabled-Commands:
+  - 'lp user %player_name% parent add BuildTeamSr server=survival'
+Build-Mode-Sr-Disabled-Commands:
+  - 'lp user %player_name% parent remove BuildTeamSr server=survival'
+
+#Anyone who is in build mode cannot touch or modify these blocks (They can place them)
+BlackListedBlocks:
+  - "ANVIL"
+  - "BEACON"
+  - "BLAST_FURNACE"
+  - "BREWING_STAND"
+  - "CRAFTING_TABLE"
+  - "ENCHANTING_TABLE"
+  - "FURNACE"
+  - "GRINDSTONE"
+  - "HOPPER"
+  - "LECTERN"
+  - "LOOM"
+  - "SMITHING_TABLE"
+  - "SMOKER"
+  - "CARTOGRAPHY_TABLE"
+  - "STONECUTTER"
+  - "SHULKER_BOX"
+  - "WHITE_SHULKER_BOX"
+  - "ORANGE_SHULKER_BOX"
+  - "MAGENTA_SHULKER_BOX"
+  - "LIGHT_BLUE_SHULKER_BOX"
+  - "YELLOW_SHULKER_BOX"
+  - "LIME_SHULKER_BOX"
+  - "PINK_SHULKER_BOX"
+  - "GRAY_SHULKER_BOX"
+  - "LIGHT_GRAY_SHULKER_BOX"
+  - "CYAN_SHULKER_BOX"
+  - "PURPLE_SHULKER_BOX"
+  - "BLUE_SHULKER_BOX"
+  - "BROWN_SHULKER_BOX"
+  - "GREEN_SHULKER_BOX"
+  - "RED_SHULKER_BOX"
+  - "BLACK_SHULKER_BOX"
+
+#See messages.yml for all configurable plugin messages
+#♏ If you have any questions please join my discord, open a support ticket and @Mike3132
+#♏ https://discord.gg/EHm6Ra3K
+#♏ Thanks for downloading and have a wonderful day
+
+#♛♛♛♛♛ END OF CONFIG ♛♛♛♛♛
+#This is the default config file.

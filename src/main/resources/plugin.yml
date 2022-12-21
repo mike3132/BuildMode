@@ -1,0 +1,13 @@
+name: BuildMode
+version: '${project.version}'
+main: me.mike3132.buildmode.Main
+api-version: 1.19
+authors: [ Mike3132 ]
+description: Ragnarok Build Mode plugin
+softdepend:
+  - PlaceholderAPI
+commands:
+  Build:
+    description: Enable / Disable build mode
+  BmAdmin:
+    description: Build Mode admin commands
