@@ -1,8 +1,5 @@
 package me.mike3132.buildmode.SetManager;
 
-import me.mike3132.buildmode.BossBarManager.BuildBossBar;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 
 import java.util.HashSet;
 import java.util.UUID;

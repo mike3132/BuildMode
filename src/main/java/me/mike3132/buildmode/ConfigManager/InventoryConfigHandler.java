@@ -11,13 +11,13 @@ public class InventoryConfigHandler {
 
 
     public static void saveInventory(Player player) {
-        FileConfiguration config = InventoryConfigCreator.INVENTORIES.get();
+        FileConfiguration config = ConfigCreator.INVENTORIES.get();
         config.set(player.getUniqueId().toString(), player.getInventory().getContents());
-        InventoryConfigCreator.INVENTORIES.save(config);
+        ConfigCreator.INVENTORIES.save(config);
     }
 
     public static void loadInventory(Player player) {
-        FileConfiguration config = InventoryConfigCreator.INVENTORIES.get();
+        FileConfiguration config = ConfigCreator.INVENTORIES.get();
         final ItemStack[] itemstacks = Objects.requireNonNull(config.getList(player.getUniqueId().toString()))
                 .stream().map(o -> (ItemStack) o).toArray(ItemStack[]::new);
         player.getInventory().setContents(itemstacks);

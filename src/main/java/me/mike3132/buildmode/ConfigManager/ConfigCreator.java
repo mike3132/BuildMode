@@ -8,8 +8,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
-public enum InventoryConfigCreator {
-    INVENTORIES;
+public enum ConfigCreator {
+    INVENTORIES, MESSAGES;
 
 
     public File getFile() {

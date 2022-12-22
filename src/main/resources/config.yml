@@ -14,17 +14,18 @@ ConfigVersion: '1.0'
 #BuildMode.Admin > Access to the admin commands
 
 Build-Mode-Jr-Enabled-Commands:
-  - 'lp user %player_name% parent add BuildTeamJr server=survival'
+  - 'lp user %player_name% parent add jrbuildteam server=survival'
 Build-Mode-Jr-Disabled-Commands:
-  - 'lp user %player_name% parent remove BuildTeamJr server=survival'
+  - 'lp user %player_name% parent remove jrbuildteam server=survival'
 Build-Mode-Sr-Enabled-Commands:
-  - 'lp user %player_name% parent add BuildTeamSr server=survival'
+  - 'lp user %player_name% parent add srbuildteam server=survival'
 Build-Mode-Sr-Disabled-Commands:
-  - 'lp user %player_name% parent remove BuildTeamSr server=survival'
+  - 'lp user %player_name% parent remove srbuildteam server=survival'
 
 #Anyone who is in build mode cannot touch or modify these blocks (They can place them)
 BlackListedBlocks:
   - "ANVIL"
+  - "CHEST"
   - "BEACON"
   - "BLAST_FURNACE"
   - "BREWING_STAND"
@@ -56,6 +57,10 @@ BlackListedBlocks:
   - "GREEN_SHULKER_BOX"
   - "RED_SHULKER_BOX"
   - "BLACK_SHULKER_BOX"
+
+WhitelistedWorlds:
+  - "world"
+  - "creative"
 
 #See messages.yml for all configurable plugin messages
 #♏ If you have any questions please join my discord, open a support ticket and @Mike3132
