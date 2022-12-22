@@ -61,7 +61,7 @@ BlackListedBlocks:
 #This list dictates what worlds Jr Build Mode can be used in (Sr Build mode can be used in any world)
 WhitelistedWorlds:
   - "world"
-  - "creative"
+  - "Creative"
 
 #See messages.yml for all configurable plugin messages
 #♏ If you have any questions please join my discord, open a support ticket and @Mike3132
