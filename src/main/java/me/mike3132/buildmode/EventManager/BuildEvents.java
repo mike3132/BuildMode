@@ -1,5 +1,6 @@
 package me.mike3132.buildmode.EventManager;
 
+import me.mike3132.buildmode.BuildManager.BuildManager;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
 import me.mike3132.buildmode.ConfigManager.InventoryConfigHandler;
 import me.mike3132.buildmode.Main;
@@ -48,6 +49,7 @@ public class BuildEvents implements Listener {
             BuildSet.removeBuildingPlayers(player.getUniqueId(), "Jr");
             InventoryConfigHandler.loadInventory(player);
             player.setGameMode(GameMode.SURVIVAL);
+            BuildManager.onDisabled(player, "Jr");
         }
     }
 
