@@ -13,7 +13,7 @@ Messages:
   #Plugin prefix for all messages.
   Prefix: '&dBuild &bMode &7> '
 
-  #➳➳➳➳➳ Player Messages ➳➳➳➳➳
+  #♢♢♢♢♢ Player Messages ♢♢♢♢♢
   #Sent if they don't add in jr or sr (Just type /build)
   Build-Not-Enough-Args: '&4ERROR: &cNot enough arguments. Please use /build jr || /build sr'
 
@@ -32,7 +32,7 @@ Messages:
   #Sent if they don't have sr permissions
   Build-Mode-sr-No-Perm: '&4ERROR: &cI do not see you as a SrBuilder, Please see @Cymmeri for more info'
 
-  #➳➳➳➳➳ FullBright Messages ➳➳➳➳➳
+  #♢♢♢♢♢ FullBright Messages ♢♢♢♢♢
   #Sent if they are not in build mode and try to use /build fullbright
   Build-Not-Active: '&4ERROR: &cYou must be in build mode to use this'
 
@@ -48,23 +48,34 @@ Messages:
   #Sent if they add in a random word
   Build-NightVision-Random-Args: '&4ERROR: &cWhat you typed is not a command argument, Please select on || off'
 
-  #➳➳➳➳➳ World Messages ➳➳➳➳➳
+  #♢♢♢♢♢ World Messages ♢♢♢♢♢
   #Sent if the player is not in the main world
   Build-Mode-Not-In-World: '&4ERROR: &cYou cannot use build mode in this world'
 
-  #➳➳➳➳➳ Event Messages ➳➳➳➳➳
+  #Sent if the player changes world while in build mode
+  Build-Mode-World-Change: '&3You have been removed from build mode due to changing worlds'
+
+  #♢♢♢♢♢ Event Messages ♢♢♢♢♢
   #Sent if the player tries to open a block inventory while in build mode
   Build-Mode-Inventory-Disabled: '&4ERROR: &cYou cannot open containers while in build mode'
 
   #Sent if the player tries to drop items while in build mode
   Build-Mode-Drop-Item-Disabled: '&4ERROR: &cYou cannot drop items while in build mode'
 
-  #➳➳➳➳➳ ADMIN Messages ➳➳➳➳➳
+  #🛑🛑🛑🛑🛑 ADMIN Messages 🛑🛑🛑🛑🛑
   #Sent if the player tries to open a block inventory while in build mode
   Build-Mode-Admin-No-Permission: '&4ERROR: &cYou do not have admin permissions'
 
   #Sent if the player tries to drop items while in build mode
   Build-Mode-Admin-No-Builders: '&4ERROR: &cThere is no one in this mode'
+
+  #This is the admin help menu. (This runs A->Z)
+  Help-Header: '&e----- &dBuild &bMode &e-----'
+  Help-A: '&6&lHelp menu'
+  Help-B: '&6To get back here use /BmAdmin help'
+  Help-C: '&6/BmAdmin reload &7-> &eReloads plugin configuration files'
+  Help-D: '&6/BmAdmin list &7-> &eToggles specified players flight'
+  Help-Footer: '&e----- &dBuild &bMode &e-----'
 
   #See config.yml for permissions, and other plugin configurations
   #♏ If you have any questions please join my discord, open a support ticket and @Mike3132

@@ -17,7 +17,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class BuildManager {
 
     public static void onEnabled(Player player, String string) {
-        if (!Main.plugin.getConfig().getStringList("WhiteilstedWorlds").contains(player.getWorld().getName())) {
+        if (!Main.plugin.getConfig().getStringList("WhitelistedWorlds").contains(player.getWorld().getName()) && string.equalsIgnoreCase("Jr")) {
             ChatMessage.sendMessage(player, "Build-Mode-Not-In-World");
             return;
         }
@@ -28,14 +28,14 @@ public class BuildManager {
         player.getInventory().clear();
         ChatMessage.sendMessage(player, "Build-Mode-Enabled");
         player.sendTitle(Main.chatColor("&dHave fun building"), Main.chatColor("&dEnjoy Creative"), 10, 30, 10);
-        BuildSet.addBuildingPlayers(player.getUniqueId());
+        BuildSet.addBuildingPlayers(player.getUniqueId(), string);
         for (String command : Main.plugin.getConfig().getStringList("Build-Mode-" + string + "-Enabled-Commands")) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, command));
         }
     }
 
     public static void onDisabled(Player player, String string) {
-        BuildSet.removeBuildingPlayers(player.getUniqueId());
+        BuildSet.removeBuildingPlayers(player.getUniqueId(), string);
         BuildBossBar.getBar().removePlayer(player);
         player.getInventory().clear();
         InventoryConfigHandler.loadInventory(player);
@@ -54,7 +54,7 @@ public class BuildManager {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if (BuildSet.getBuildingPlayers().contains(player.getUniqueId())) {
+                if (BuildSet.getBuildingPlayers(string).contains(player.getUniqueId())) {
                     String message = Main.chatColor("&2Use &a/build " + string + " &2to exit");
                     player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                 } else {

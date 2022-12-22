@@ -47,7 +47,8 @@ public final class Main extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (BuildSet.getBuildingPlayers().contains(player.getUniqueId())) {
+            if (BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) ||
+                    BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
                 final ItemStack[] itemstacks = Objects.requireNonNull(ConfigCreator.INVENTORIES.get().getList(player.getUniqueId().toString())).stream().map(o -> (ItemStack) o).toArray(ItemStack[]::new);
                 player.getInventory().setContents(itemstacks);
             }

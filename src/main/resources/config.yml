@@ -58,6 +58,7 @@ BlackListedBlocks:
   - "RED_SHULKER_BOX"
   - "BLACK_SHULKER_BOX"
 
+#This list dictates what worlds Jr Build Mode can be used in (Sr Build mode can be used in any world)
 WhitelistedWorlds:
   - "world"
   - "creative"

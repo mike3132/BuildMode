@@ -1,23 +1,15 @@
 package me.mike3132.buildmode.CommandManager;
 
-import me.clip.placeholderapi.PlaceholderAPI;
-import me.mike3132.buildmode.BossBarManager.BuildBossBar;
 import me.mike3132.buildmode.BuildManager.BuildManager;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
-import me.mike3132.buildmode.ConfigManager.InventoryConfigHandler;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
+
 
 
 public class BuildCommand implements CommandExecutor {
@@ -43,7 +35,7 @@ public class BuildCommand implements CommandExecutor {
                     ChatMessage.sendMessage(player, "Build-Mode-jr-No-Perm");
                     return true;
                 }
-                if (!BuildSet.getBuildingPlayers().contains(player.getUniqueId())) {
+                if (!BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId())) {
                     BuildManager.onEnabled(player, "Jr");
                     BuildManager.buildModeRunnable(player, "Jr");
                     return false;
@@ -55,7 +47,7 @@ public class BuildCommand implements CommandExecutor {
                     ChatMessage.sendMessage(player, "Build-Mode-sr-No-Perm");
                     return true;
                 }
-                if (!BuildSet.getBuildingPlayers().contains(player.getUniqueId())) {
+                if (!BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
                     BuildManager.onEnabled(player, "Sr");
                     BuildManager.buildModeRunnable(player, "Sr");
                     return false;
@@ -63,10 +55,12 @@ public class BuildCommand implements CommandExecutor {
                 BuildManager.onDisabled(player, "Sr");
                 break;
             case "FULLBRIGHT":
-                if (!BuildSet.getBuildingPlayers().contains(player.getUniqueId())) {
+                if (!BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) &&
+                        !BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
                     ChatMessage.sendMessage(player, "Build-Not-Active");
                     return false;
                 }
+
                 if (args.length == 1) {
                     ChatMessage.sendMessage(player, "Build-NightVision-Not-Enough-Args");
                     return false;
