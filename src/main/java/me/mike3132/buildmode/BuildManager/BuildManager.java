@@ -38,8 +38,7 @@ public class BuildManager {
         }
         WorldEditWand worldEditWand = new WorldEditWand();
         ItemStack wand = worldEditWand.getWand();
-        FullBrightClock fullBrightClock = new FullBrightClock();
-        ItemStack clock = fullBrightClock.getClock();
+        ItemStack clock = FullBrightClock.getClock();
         TeleportCompass teleportCompass = new TeleportCompass();
         ItemStack compass = teleportCompass.getCompass();
         player.getInventory().setItem(0, wand);

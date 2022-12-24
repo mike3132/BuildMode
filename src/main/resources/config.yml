@@ -82,6 +82,7 @@ Clock-Name: '&d&lFullbright Clock'
 Clock-Lore:
   - '&aThis item will enable || disable fullbright'
   - ''
+  - '&4Glowing &7= &2&lEnabled'
   - '&b&lRight click to change mode'
 
 #♢♢♢♢♢Teleport Compass Item♢♢♢♢♢

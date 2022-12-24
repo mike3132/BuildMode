@@ -12,17 +12,8 @@ import java.util.List;
 
 public class FullBrightClock {
 
-    private ItemStack clock;
-
-    public FullBrightClock() {
-        this.createClock();
-    }
-
-    public ItemStack getClock() {
-        return this.clock;
-    }
-
-    public void createClock() {
+    private static ItemStack clock;
+    static {
         ItemStack item = new ItemStack(Material.CLOCK, 1);
         ItemMeta meta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
@@ -32,9 +23,13 @@ public class FullBrightClock {
         }
         meta.setDisplayName(Main.chatColor("" + Main.plugin.getConfig().getString("Clock-Name")));
         meta.setLore(lore);
-        meta.addEnchant(Enchantment.LUCK, 10, true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         clock = item;
     }
+
+
+    public static ItemStack getClock() {
+        return clock;
+    }
+
 }
