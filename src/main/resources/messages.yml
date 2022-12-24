@@ -62,6 +62,10 @@ Messages:
   #Sent if the player tries to drop items while in build mode
   Build-Mode-Drop-Item-Disabled: '&4ERROR: &cYou cannot drop items while in build mode'
 
+  #♢♢♢♢♢ Creative inventory Messages ♢♢♢♢♢
+  #Sent if the player tries to use /build cinv while not in build mode
+  Build-Mode-Creative-Inventory-Not-Active: '&4ERROR: &cYou must be in build mode to use this command'
+
   #🛑🛑🛑🛑🛑 ADMIN Messages 🛑🛑🛑🛑🛑
   #Sent if the player tries to open a block inventory while in build mode
   Build-Mode-Admin-No-Permission: '&4ERROR: &cYou do not have admin permissions'

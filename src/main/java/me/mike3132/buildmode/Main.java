@@ -4,6 +4,7 @@ import me.mike3132.buildmode.CommandManager.BuildCommand;
 import me.mike3132.buildmode.CommandManager.AdminCommands;
 import me.mike3132.buildmode.ConfigManager.ConfigCreator;
 import me.mike3132.buildmode.EventManager.BuildEvents;
+import me.mike3132.buildmode.EventManager.ItemEvents;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,6 +30,7 @@ public final class Main extends JavaPlugin {
 
         // Event loader
         Bukkit.getPluginManager().registerEvents(new BuildEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new ItemEvents(), this);
 
         // Command loader
         registerBuildCommand();

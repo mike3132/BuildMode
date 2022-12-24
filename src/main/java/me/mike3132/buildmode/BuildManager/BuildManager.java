@@ -4,6 +4,9 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.mike3132.buildmode.BossBarManager.BuildBossBar;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
 import me.mike3132.buildmode.ConfigManager.InventoryConfigHandler;
+import me.mike3132.buildmode.ItemManager.FullBrightClock;
+import me.mike3132.buildmode.ItemManager.TeleportCompass;
+import me.mike3132.buildmode.ItemManager.WorldEditWand;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import net.md_5.bungee.api.ChatMessageType;
@@ -11,6 +14,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -32,6 +36,15 @@ public class BuildManager {
         for (String command : Main.plugin.getConfig().getStringList("Build-Mode-" + string + "-Enabled-Commands")) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, command));
         }
+        WorldEditWand worldEditWand = new WorldEditWand();
+        ItemStack wand = worldEditWand.getWand();
+        FullBrightClock fullBrightClock = new FullBrightClock();
+        ItemStack clock = fullBrightClock.getClock();
+        TeleportCompass teleportCompass = new TeleportCompass();
+        ItemStack compass = teleportCompass.getCompass();
+        player.getInventory().setItem(0, wand);
+        player.getInventory().setItem(4, clock);
+        player.getInventory().setItem(8, compass);
     }
 
     public static void onDisabled(Player player, String string) {
@@ -48,6 +61,8 @@ public class BuildManager {
         for (String command : Main.plugin.getConfig().getStringList("Build-Mode-"+ string + "-Disabled-Commands")) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, command));
         }
+
+
     }
 
     public static void buildModeRunnable(Player player, String string) {

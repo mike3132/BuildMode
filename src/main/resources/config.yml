@@ -63,6 +63,40 @@ WhitelistedWorlds:
   - "world"
   - "Creative"
 
+#♢♢♢♢♢World edit wand Item♢♢♢♢♢
+#Wand name -> Name of the world edit wand (Please use & for color codes).
+Wand-Name: '&5&lWorld Edit Wand'
+
+#Wand lore -> Any lore lines you would like on the world edit wand (Please use & for color codes).
+Wand-Lore:
+  - '&bThis works just like a normal world edit wand'
+  - ''
+  - '&2&lLeft click to set pos 1'
+  - '&2&lRight click to set pos 2'
+
+#♢♢♢♢♢Fullbright Clock Item♢♢♢♢♢
+#Clock name -> Name of the Fullbright clock (Please use & for color codes).
+Clock-Name: '&d&lFullbright Clock'
+
+#Clock lore -> Any lore lines you would like on the Fullbright clock (Please use & for color codes).
+Clock-Lore:
+  - '&aThis item will enable || disable fullbright'
+  - ''
+  - '&b&lRight click to change mode'
+
+#♢♢♢♢♢Teleport Compass Item♢♢♢♢♢
+#Wand name -> Name of the Compass (Please use & for color codes).
+Compass-Name: '&6&lTeleport Compass'
+
+#Wand lore -> Any lore lines you would like on the Compass (Please use & for color codes).
+Compass-Lore:
+  - '&eThis item is a teleporter'
+  - ''
+  - '&3&lLeft click to teleport to your crosshair'
+  - '&a&lRight click to teleport through blocks'
+
+
+
 #See messages.yml for all configurable plugin messages
 #♏ If you have any questions please join my discord, open a support ticket and @Mike3132
 #♏ https://discord.gg/ePQGvQuzG3

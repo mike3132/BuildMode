@@ -2,12 +2,16 @@ package me.mike3132.buildmode.CommandManager;
 
 import me.mike3132.buildmode.BuildManager.BuildManager;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
+import me.mike3132.buildmode.ItemManager.FullBrightClock;
+import me.mike3132.buildmode.ItemManager.TeleportCompass;
+import me.mike3132.buildmode.ItemManager.WorldEditWand;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
 
@@ -54,33 +58,23 @@ public class BuildCommand implements CommandExecutor {
                 }
                 BuildManager.onDisabled(player, "Sr");
                 break;
-            case "FULLBRIGHT":
+            case "CINV":
                 if (!BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) &&
                         !BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
-                    ChatMessage.sendMessage(player, "Build-Not-Active");
-                    return false;
+                    ChatMessage.sendMessage(player, "Build-Mode-Creative-Inventory-Not-Active");
+                    return true;
                 }
-
-                if (args.length == 1) {
-                    ChatMessage.sendMessage(player, "Build-NightVision-Not-Enough-Args");
-                    return false;
-                }
-                    switch (args[1].toUpperCase()) {
-                        case "ON":
-                            player.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(999999999, 255));
-                            ChatMessage.sendMessage(player, "Build-NightVision-On");
-                            break;
-                        case "OFF":
-                            player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                            ChatMessage.sendMessage(player, "Build-NightVision-Off");
-                            break;
-                        default:
-                            ChatMessage.sendMessage(player, "Build-NightVision-Random-Args");
-                            break;
-
-                }
-
+                WorldEditWand worldEditWand = new WorldEditWand();
+                ItemStack wand = worldEditWand.getWand();
+                FullBrightClock fullBrightClock = new FullBrightClock();
+                ItemStack clock = fullBrightClock.getClock();
+                TeleportCompass teleportCompass = new TeleportCompass();
+                ItemStack compass = teleportCompass.getCompass();
+                player.getInventory().setItem(0, wand);
+                player.getInventory().setItem(4, clock);
+                player.getInventory().setItem(8, compass);
                 break;
+
             default:
                 ChatMessage.sendMessage(player, "Build-Random-Args");
                 break;
