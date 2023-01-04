@@ -2,9 +2,7 @@ package me.mike3132.buildmode.CommandManager;
 
 import me.mike3132.buildmode.BuildManager.BuildManager;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
-import me.mike3132.buildmode.ItemManager.FullBrightClock;
-import me.mike3132.buildmode.ItemManager.TeleportCompass;
-import me.mike3132.buildmode.ItemManager.WorldEditWand;
+import me.mike3132.buildmode.ItemManager.*;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import org.bukkit.command.Command;
@@ -69,11 +67,17 @@ public class BuildCommand implements CommandExecutor {
                 ItemStack clock = FullBrightClock.getClock();
                 TeleportCompass teleportCompass = new TeleportCompass();
                 ItemStack compass = teleportCompass.getCompass();
+                LightItem lightItem = new LightItem();
+                ItemStack light = lightItem.getLight();
+                DebugStickItem debugStickItem = new DebugStickItem();
+                ItemStack stick = debugStickItem.getStick();
+
                 player.getInventory().setItem(0, wand);
+                player.getInventory().setItem(1, light);
                 player.getInventory().setItem(4, clock);
+                player.getInventory().setItem(7, stick);
                 player.getInventory().setItem(8, compass);
                 break;
-
             default:
                 ChatMessage.sendMessage(player, "Build-Random-Args");
                 break;

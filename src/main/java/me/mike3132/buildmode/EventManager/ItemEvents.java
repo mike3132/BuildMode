@@ -2,6 +2,7 @@ package me.mike3132.buildmode.EventManager;
 
 import me.mike3132.buildmode.ItemManager.FullBrightClock;
 import me.mike3132.buildmode.SetManager.BuildSet;
+import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,12 +30,26 @@ public class ItemEvents implements Listener {
                         player.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(999999999, 255));
                         meta.addEnchant(Enchantment.LUCK, 10, true);
                         clock.setItemMeta(meta);
+                        // Hacky method will fix later (Mike)
+                        for (ItemStack item : player.getInventory()) {
+                            if (item == null) continue;
+                            if (item.getType().equals(Material.CLOCK)) {
+                                player.getInventory().remove(item);
+                            }
+                        }
                         player.getInventory().setItem(4, clock);
                         return;
                     }
                     player.removePotionEffect(PotionEffectType.NIGHT_VISION);
                     meta.removeEnchant(Enchantment.LUCK);
                     clock.setItemMeta(meta);
+                    // Hacky method will fix later (Mike)
+                    for (ItemStack item : player.getInventory()) {
+                        if (item == null) continue;
+                        if (item.getType().equals(Material.CLOCK)) {
+                            player.getInventory().remove(item);
+                        }
+                    }
                     player.getInventory().setItem(4, clock);
                 }
             }

@@ -96,6 +96,29 @@ Compass-Lore:
   - '&3&lLeft click to teleport to your crosshair'
   - '&a&lRight click to teleport through blocks'
 
+#♢♢♢♢♢Light Item♢♢♢♢♢
+#Wand name -> Name of the Compass (Please use & for color codes).
+Light-Name: '&6&lMagic Light'
+
+#Wand lore -> Any lore lines you would like on the Compass (Please use & for color codes).
+Light-Lore:
+  - '&3This item is a light block'
+  - ''
+  - '&dPlaced lights'
+  - '&dCan only be seen in creative'
+
+#♢♢♢♢♢Debug Stick Item♢♢♢♢♢
+#Wand name -> Name of the Compass (Please use & for color codes).
+Debug-Stick-Name: '&4&lDebug Stick'
+
+#Wand lore -> Any lore lines you would like on the Compass (Please use & for color codes).
+Debug-Stick-Lore:
+  - '&cThis stick can manipulate blocks'
+  - '&3Mode changes can be seen above your hotbar'
+  - ''
+  - '&f&lLeft click to change mode'
+  - '&5&lRight click to manipulate a block'
+
 
 
 #See messages.yml for all configurable plugin messages
