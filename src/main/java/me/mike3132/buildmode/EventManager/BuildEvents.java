@@ -1,10 +1,12 @@
 package me.mike3132.buildmode.EventManager;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.mike3132.buildmode.BuildManager.BuildManager;
 import me.mike3132.buildmode.ChatManager.ChatMessage;
 import me.mike3132.buildmode.ConfigManager.InventoryConfigHandler;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -70,8 +72,8 @@ public class BuildEvents implements Listener {
                 BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
             BuildSet.removeBuildingPlayers(player.getUniqueId(), "Jr");
             BuildSet.removeBuildingPlayers(player.getUniqueId(), "Sr");
-            InventoryConfigHandler.loadInventory(player);
-            player.setGameMode(GameMode.SURVIVAL);
+            BuildManager.onDisabled(player, "Sr");
+            BuildManager.onDisabled(player, "Jr");
         }
     }
 }
