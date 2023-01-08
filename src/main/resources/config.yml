@@ -22,6 +22,11 @@ Build-Mode-Sr-Enabled-Commands:
 Build-Mode-Sr-Disabled-Commands:
   - 'lp user %player_name% parent remove srbuildteam server=survival'
 
+Build-Mode-Disabled-Safety: true
+Build-Mode-Disabled-Safety-Commands:
+  - 'spawn %player_name%'
+
+
 #Anyone who is in build mode cannot touch or modify these blocks (They can place them)
 BlackListedBlocks:
   - "ANVIL"

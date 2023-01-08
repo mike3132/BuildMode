@@ -11,6 +11,9 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -64,6 +67,19 @@ public class BuildManager {
         }
         for (String command : Main.plugin.getConfig().getStringList("Build-Mode-"+ string + "-Disabled-Commands")) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, command));
+        }
+        boolean teleportEnabled = Main.plugin.getConfig().getBoolean("Build-Mode-Disabled-Safety");
+
+        if (!teleportEnabled) return;
+
+        Location location = player.getLocation().clone().subtract(0,1,0);
+        Block block = location.getBlock();
+        if (!block.getType().isSolid()) {
+           for (String command : Main.plugin.getConfig().getStringList("Build-Mode-Disabled-Safety-Commands")) {
+               Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, command));
+               ChatMessage.sendMessage(player, "Build-Mode-Disabled-Safety-Message");
+               break;
+           }
         }
 
 
