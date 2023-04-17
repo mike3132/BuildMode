@@ -1,4 +1,4 @@
-package me.mike3132.buildmode.ChatManager;
+package me.mike3132.buildmode.MessageManager;
 
 import me.mike3132.buildmode.Main;
 import org.bukkit.ChatColor;
@@ -15,6 +15,4 @@ public class ChatMessage {
         String message = configMessages.getString("Messages.Prefix") + configMessages.getString("Messages." + key);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
-
-
 }

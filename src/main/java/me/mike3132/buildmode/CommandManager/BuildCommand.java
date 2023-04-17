@@ -1,17 +1,14 @@
 package me.mike3132.buildmode.CommandManager;
 
 import me.mike3132.buildmode.BuildManager.BuildManager;
-import me.mike3132.buildmode.ChatManager.ChatMessage;
-import me.mike3132.buildmode.ItemManager.*;
+import me.mike3132.buildmode.ItemManager.GiveManager;
 import me.mike3132.buildmode.Main;
+import me.mike3132.buildmode.MessageManager.ChatMessage;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffectType;
-
 
 
 public class BuildCommand implements CommandExecutor {
@@ -57,26 +54,24 @@ public class BuildCommand implements CommandExecutor {
                 BuildManager.onDisabled(player, "Sr");
                 break;
             case "CINV":
+                if (player.hasPermission("BuildMode.Override")) {
+                    GiveManager.worldEditWand(player);
+                    GiveManager.fullbrightClock(player);
+                    GiveManager.lightItem(player);
+                    GiveManager.debugStick(player);
+                    GiveManager.teleportCompass(player);
+                    return false;
+                }
                 if (!BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) &&
                         !BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
                     ChatMessage.sendMessage(player, "Build-Mode-Creative-Inventory-Not-Active");
                     return true;
                 }
-                WorldEditWand worldEditWand = new WorldEditWand();
-                ItemStack wand = worldEditWand.getWand();
-                ItemStack clock = FullBrightClock.getClock();
-                TeleportCompass teleportCompass = new TeleportCompass();
-                ItemStack compass = teleportCompass.getCompass();
-                LightItem lightItem = new LightItem();
-                ItemStack light = lightItem.getLight();
-                DebugStickItem debugStickItem = new DebugStickItem();
-                ItemStack stick = debugStickItem.getStick();
-
-                player.getInventory().setItem(0, wand);
-                player.getInventory().setItem(1, light);
-                player.getInventory().setItem(4, clock);
-                player.getInventory().setItem(7, stick);
-                player.getInventory().setItem(8, compass);
+                GiveManager.worldEditWand(player);
+                GiveManager.fullbrightClock(player);
+                GiveManager.lightItem(player);
+                GiveManager.debugStick(player);
+                GiveManager.teleportCompass(player);
                 break;
             default:
                 ChatMessage.sendMessage(player, "Build-Random-Args");

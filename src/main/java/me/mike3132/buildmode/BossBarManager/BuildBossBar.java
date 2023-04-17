@@ -9,8 +9,10 @@ import org.bukkit.boss.BossBar;
 
 public class BuildBossBar {
 
-    private static final String barTitle = Main.chatColor("&6&lBuild Mode");
-    private static final BossBar bar = Bukkit.createBossBar(barTitle, BarColor.GREEN, BarStyle.SOLID);
+    private static final String barTitle = Main.chatColor("" + Main.plugin.getConfig().getString("BossBar-Title"));
+    private static final String barColor = Main.chatColor("" + Main.plugin.getConfig().getString("BossBar-Color"));
+    private static final String barStyle = Main.chatColor("" + Main.plugin.getConfig().getString("BossBar-Style"));
+    private static final BossBar bar = Bukkit.createBossBar(barTitle, BarColor.valueOf(barColor), BarStyle.valueOf(barStyle));
 
 
     public static BossBar getBar() {

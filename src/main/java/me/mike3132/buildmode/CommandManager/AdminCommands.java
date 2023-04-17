@@ -1,6 +1,6 @@
 package me.mike3132.buildmode.CommandManager;
 
-import me.mike3132.buildmode.ChatManager.ChatMessage;
+import me.mike3132.buildmode.MessageManager.ChatMessage;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
 import org.bukkit.Bukkit;

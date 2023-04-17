@@ -21,16 +21,16 @@ Messages:
   Build-Random-Args: '&4ERROR: &cWhat you typed is not a command argument, Please choose jr || sr'
 
   #Sent when they enter build mode
-  Build-Mode-Enabled: '&2Saving a copy of your survival inventory.'
+  Build-Mode-Enabled-Chat-Message: '&2Saving a copy of your survival inventory.'
 
   #Sent when they exit build mode
-  Build-Mode-Disabled: '&aLoading your survival inventory.'
+  Build-Mode-Disabled-Chat-Message: '&aLoading your survival inventory.'
 
   #Sent if they don't have jr permissions
-  Build-Mode-jr-No-Perm: '&4ERROR: &cI do not see you as a JrBuilder, Please see @Cymmeri for more info'
+  Build-Mode-jr-No-Perm: '&4ERROR: &cI do not see you as a JrBuilder, Please contact an Admin for more info'
 
   #Sent if they don't have sr permissions
-  Build-Mode-sr-No-Perm: '&4ERROR: &cI do not see you as a SrBuilder, Please see @Cymmeri for more info'
+  Build-Mode-sr-No-Perm: '&4ERROR: &cI do not see you as a SrBuilder, Please contact an Admin for more info'
 
   #♢♢♢♢♢ FullBright Messages ♢♢♢♢♢
   #Sent if they are not in build mode and try to use /build fullbright
@@ -69,6 +69,23 @@ Messages:
   #♢♢♢♢♢ Build disabled floating Messages ♢♢♢♢♢
   #Sent if the player tries to use /build cinv while not in build mode
   Build-Mode-Disabled-Safety-Message: '&3You were not standing on a solid block, you have been sent to spawn'
+
+  #♢♢♢♢♢ Title messages ♢♢♢♢♢
+  #♢♢♢♢♢ Build Enabled Title message ♢♢♢♢♢
+  #Sent when the player enables build mode
+  Build-Mode-Enabled-Title: '&bExample Title'
+  Build-Mode-Enabled-SubTitle: '&aExample Sub Title'
+
+  #♢♢♢♢♢ Build Disabled Title message ♢♢♢♢♢
+  #Sent when the player enters build mode
+  #Sent when the player disables build mode
+  Build-Mode-Disabled-Title: '&4Example Title'
+  Build-Mode-Disabled-SubTitle: '&cExample Sub Title'
+
+  #♢♢♢♢♢ Action Bar message ♢♢♢♢♢
+  #This is sent while the player is in build mode
+  Action-Bar-Message: "&3To exit use &b/build &fjr &3|| &fsr"
+
 
   #🛑🛑🛑🛑🛑 ADMIN Messages 🛑🛑🛑🛑🛑
   #Sent if the player tries to open a block inventory while in build mode

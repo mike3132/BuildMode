@@ -1,12 +1,10 @@
 package me.mike3132.buildmode.EventManager;
 
-import me.clip.placeholderapi.PlaceholderAPI;
 import me.mike3132.buildmode.BuildManager.BuildManager;
-import me.mike3132.buildmode.ChatManager.ChatMessage;
+import me.mike3132.buildmode.MessageManager.ChatMessage;
 import me.mike3132.buildmode.ConfigManager.InventoryConfigHandler;
 import me.mike3132.buildmode.Main;
 import me.mike3132.buildmode.SetManager.BuildSet;
-import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -29,6 +27,8 @@ public class BuildEvents implements Listener {
         Player player = pc.getPlayer();
         Block block = pc.getClickedBlock();
         if (pc.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if (player.hasPermission("BuildMode.Override")) return;
+
             if (BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId())) {
                 List<Material> blacklistedBlocks = new ArrayList<>();
                 for (String string : Main.plugin.getConfig().getStringList("BlackListedBlocks")) {
@@ -46,6 +46,8 @@ public class BuildEvents implements Listener {
     @EventHandler
     public void onWorldChange(PlayerChangedWorldEvent wc) {
         Player player = wc.getPlayer();
+        if (player.hasPermission("BuildMode.Override")) return;
+
         if (BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId())) {
             ChatMessage.sendMessage(player, "Build-Mode-World-Change");
             BuildSet.removeBuildingPlayers(player.getUniqueId(), "Jr");
@@ -58,6 +60,8 @@ public class BuildEvents implements Listener {
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent pdi) {
         Player player = pdi.getPlayer();
+        if (player.hasPermission("BuildMode.Override")) return;
+
         if (BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) ||
                 BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
             ChatMessage.sendMessage(player, "Build-Mode-Drop-Item-Disabled");;
@@ -68,6 +72,7 @@ public class BuildEvents implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent pqe) {
         Player player = pqe.getPlayer();
+
         if (BuildSet.getBuildingPlayers("Jr").contains(player.getUniqueId()) ||
                 BuildSet.getBuildingPlayers("Sr").contains(player.getUniqueId())) {
             BuildSet.removeBuildingPlayers(player.getUniqueId(), "Jr");

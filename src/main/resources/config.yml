@@ -4,14 +4,25 @@
 #                                                   💻Build Mode Config💻
 #                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
 
-Version: 'Version 1.5'
-ConfigVersion: '1.6'
+Version: 'Version 1.7'
+ConfigVersion: '1.7'
 ##### WARNING: DO NOT CHANGE ANYTHING ABOVE THIS LINE IT WILL BREAK THE PLUGIN!#####
 
 #✍✍✍✍✍Permissions✍✍✍✍✍
 #BuildMode.Jr > Access to the Sr build mode
 #BuildMode.Sr > Access to the Sr Build mode
 #BuildMode.Admin > Access to the admin commands
+
+#BuildMode.Override > 💀💀💀 WARNING: This Overrides ALL safety features of the plugin. (Includes the following) 💀💀💀
+#Players can drop items
+#Players can use /build cinv to get the creative inventory anytime
+#Players bypass all container restrictions
+#Players bypass world change restrictions
+#Players inventory is not saved upon entering build mode
+#Players do not get given an inventory upon exiting build mode
+#Players do not get their inventory back when leaving the server
+#Players game mode is not changed upon entering or exiting build mode (Creative when entering, Survival when exiting)
+#Players do not get teleported if they leave build mode while flying
 
 Build-Mode-Jr-Enabled-Commands:
   - 'lp user %player_name% parent add jrbuildteam server=survival'
@@ -32,6 +43,8 @@ BlackListedBlocks:
   - "ANVIL"
   - "CHEST"
   - "BEACON"
+  - "DROPPER"
+  - "DISPENSER"
   - "BLAST_FURNACE"
   - "BREWING_STAND"
   - "CRAFTING_TABLE"
@@ -69,6 +82,9 @@ WhitelistedWorlds:
   - "Creative"
 
 #♢♢♢♢♢World edit wand Item♢♢♢♢♢
+#If this is set to true players will be given a wand when entering or exiting build mode
+Wand-Enabled: true
+
 #Wand name -> Name of the world edit wand (Please use & for color codes).
 Wand-Name: '&5&lWorld Edit Wand'
 
@@ -80,6 +96,9 @@ Wand-Lore:
   - '&2&lRight click to set pos 2'
 
 #♢♢♢♢♢Fullbright Clock Item♢♢♢♢♢
+#If this is set to true players will be given a fullbright clock when entering build mode
+Fullbright-Clock-Enabled: true
+
 #Clock name -> Name of the Fullbright clock (Please use & for color codes).
 Clock-Name: '&d&lFullbright Clock'
 
@@ -91,7 +110,10 @@ Clock-Lore:
   - '&b&lRight click to change mode'
 
 #♢♢♢♢♢Teleport Compass Item♢♢♢♢♢
-#Wand name -> Name of the Compass (Please use & for color codes).
+#If this is set to true players will be given a teleport compass when entering build mode
+Compass-Enabled: true
+
+#Compass name -> Name of the Compass (Please use & for color codes).
 Compass-Name: '&6&lTeleport Compass'
 
 #Wand lore -> Any lore lines you would like on the Compass (Please use & for color codes).
@@ -102,6 +124,9 @@ Compass-Lore:
   - '&a&lRight click to teleport through blocks'
 
 #♢♢♢♢♢Light Item♢♢♢♢♢
+#If this is set to true players will be given a Light when entering build mode
+Light-Enabled: true
+
 #Wand name -> Name of the Compass (Please use & for color codes).
 Light-Name: '&6&lMagic Light'
 
@@ -113,6 +138,9 @@ Light-Lore:
   - '&dCan only be seen in creative'
 
 #♢♢♢♢♢Debug Stick Item♢♢♢♢♢
+#If this is set to true players will be given a debug stick when entering build mode
+Debug-Stick-Enabled: true
+
 #Wand name -> Name of the Compass (Please use & for color codes).
 Debug-Stick-Name: '&4&lDebug Stick'
 
@@ -123,6 +151,42 @@ Debug-Stick-Lore:
   - ''
   - '&f&lLeft click to change mode'
   - '&5&lRight click to manipulate a block'
+
+#♢♢♢♢♢ Title messages ♢♢♢♢♢
+#This works for both when the player enters and leaves build mode.
+#The time is in minecraft ticks this means (20 = 1 second)
+#Title-Fade-in is how long it takes the title to show up
+#Title-Stay is how long the text stays on their screen
+#Title-Fade-Out is how long it takes for the title to disappear
+
+#Title message enabled. (If this is set to true players will get a title when entering or exiting build mode)
+Title-Message-Enabled: true
+
+#Title time integers (Only use numbers here)
+Title-Fade-In: 40
+Title-Stay: 100
+Title-Fade-Out: 60
+
+#♢♢♢♢♢ Action Bar message ♢♢♢♢♢
+#Action bar message enabled. (If this is set to true players will get an action bar wile in build mode)
+Action-Bar-Message-Enabled: true
+
+#♢♢♢♢♢ Boss Bar Styling ♢♢♢♢♢
+#This is sent while the player is in build mode
+##### WARNING: For the boss bar to change you MUST restart the server!#####
+
+#Boss bar enabled. (If this is set to true players will see a boss bar while in build mode)
+Boss-Bar-Enabled: true
+
+#This is what the boss bar says
+BossBar-Title: "&6&lBuild Mode"
+
+#This is the color of the boss bar. (For colors https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html)
+BossBar-Color: "BLUE"
+
+#This is the style of the boss bar. (For styles https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html)
+BossBar-Style: "SEGMENTED_6"
+
 
 
 
