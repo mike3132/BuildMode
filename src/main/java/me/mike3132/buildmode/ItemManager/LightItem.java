@@ -32,7 +32,7 @@ public class LightItem {
         }
         meta.setDisplayName(Main.chatColor("" + Main.plugin.getConfig().getString("Light-Name")));
         meta.setLore(lore);
-        meta.addEnchant(Enchantment.LUCK, 10, true);
+        meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 10, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         light = item;

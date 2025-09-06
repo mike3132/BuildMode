@@ -6,7 +6,7 @@
 
     <groupId>me.Mike3132</groupId>
     <artifactId>BuildMode</artifactId>
-    <version>1.8</version>
+    <version>1.21</version>
     <packaging>jar</packaging>
 
     <name>BuildMode</name>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.5-R0.1-SNAPSHOT</version>
+            <version>1.21.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

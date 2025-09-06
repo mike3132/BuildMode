@@ -28,7 +28,7 @@ public class ItemEvents implements Listener {
                 if (player.getInventory().getItemInMainHand().isSimilar(clock)) {
                     if (!player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
                         player.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(999999999, 255));
-                        meta.addEnchant(Enchantment.LUCK, 10, true);
+                        meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 10, true);
                         clock.setItemMeta(meta);
                         // Hacky method will fix later (Mike)
                         for (ItemStack item : player.getInventory()) {
@@ -41,7 +41,7 @@ public class ItemEvents implements Listener {
                         return;
                     }
                     player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                    meta.removeEnchant(Enchantment.LUCK);
+                    meta.removeEnchant(Enchantment.LUCK_OF_THE_SEA);
                     clock.setItemMeta(meta);
                     // Hacky method will fix later (Mike)
                     for (ItemStack item : player.getInventory()) {
